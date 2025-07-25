@@ -9,7 +9,7 @@ print("Image Read Successfull")
 Reader=easyocr.Reader(['en'],gpu=True)  #create an instance for reader using easyocr, set gpu to TRUE for faster computation
 readtext=Reader.readtext(image)     #using instance read text from image
 
-threshold=0.25
+threshold=0.25  #decides how much in depth you want to read the text
 #drawing boxes for text's found:
 for i in readtext:   
     print(i)        #print original values
