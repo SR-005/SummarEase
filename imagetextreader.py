@@ -13,7 +13,7 @@ textlist=[]     #declare a list to store the texts
 threshold=0.25  #decides how much in depth you want to read the text
 #drawing boxes for text's found:
 for i in readtext:   
-    #print(i)        #print original values
+    '''print(i)'''        #print original values
     box,text,score=i    #seperate the raw values
 
     if score>threshold:
@@ -26,5 +26,5 @@ for i in readtext:
 fulltext=" ".join(textlist)
 print(fulltext)
 
-plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
-plt.show() 
+'''plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
+plt.show() '''
