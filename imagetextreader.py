@@ -12,13 +12,14 @@ readtext=Reader.readtext(image)     #using instance read text from image
 threshold=0.25  #decides how much in depth you want to read the text
 #drawing boxes for text's found:
 for i in readtext:   
-    print(i)        #print original values
+    #print(i)        #print original values
     box,text,score=i    #seperate the raw values
 
     if score>threshold:
         topleftbox=tuple(box[0])    #get the coordinates of the topleft point of bounding box, we use tuple cause it's in format [x,y]
         bottomrightbox=tuple(box[2])    #get the coordinates of the bottomright point of bounding box
         cv2.rectangle(image,topleftbox,bottomrightbox,(255,0,0),4)  #draw the rectange using extracted coordinates
+        print(text)
 
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
 plt.show() 
