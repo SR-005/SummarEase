@@ -1,6 +1,7 @@
 import cv2
 import easyocr
 import matplotlib.pyplot as plt
+from transformers import pipeline
 
 imagepath="test.jpeg"       #specify image path here
 image=cv2.imread(imagepath)     #read the image using imagepath
@@ -28,3 +29,7 @@ print(fulltext)
 
 '''plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
 plt.show() '''
+
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summary = summarizer(fulltext, max_length=130, min_length=30, do_sample=False)
+print("\nSummary:\n", summary[0]['summary_text'])
