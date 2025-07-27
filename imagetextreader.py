@@ -9,6 +9,7 @@ print("Image Read Successfull")
 Reader=easyocr.Reader(['en'],gpu=True)  #create an instance for reader using easyocr, set gpu to TRUE for faster computation
 readtext=Reader.readtext(image)     #using instance read text from image
 
+textlist=[]     #declare a list to store the texts
 threshold=0.25  #decides how much in depth you want to read the text
 #drawing boxes for text's found:
 for i in readtext:   
@@ -19,7 +20,11 @@ for i in readtext:
         topleftbox=tuple(box[0])    #get the coordinates of the topleft point of bounding box, we use tuple cause it's in format [x,y]
         bottomrightbox=tuple(box[2])    #get the coordinates of the bottomright point of bounding box
         cv2.rectangle(image,topleftbox,bottomrightbox,(255,0,0),4)  #draw the rectange using extracted coordinates
-        print(text)
+        textlist.append(text)
+
+#print the fulltext:
+fulltext=" ".join(textlist)
+print(fulltext)
 
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
 plt.show() 
