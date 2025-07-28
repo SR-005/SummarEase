@@ -18,9 +18,9 @@ for i in readtext:
     box,text,score=i    #seperate the raw values
 
     if score>threshold:
-        topleftbox=tuple(box[0])    #get the coordinates of the topleft point of bounding box, we use tuple cause it's in format [x,y]
+        '''topleftbox=tuple(box[0])    #get the coordinates of the topleft point of bounding box, we use tuple cause it's in format [x,y]
         bottomrightbox=tuple(box[2])    #get the coordinates of the bottomright point of bounding box
-        cv2.rectangle(image,topleftbox,bottomrightbox,(255,0,0),4)  #draw the rectange using extracted coordinates
+        cv2.rectangle(image,topleftbox,bottomrightbox,(255,0,0),4)  #draw the rectange using extracted coordinates'''
         textlist.append(text)
 
 #print the fulltext:
@@ -30,7 +30,14 @@ print(fulltext)
 '''plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  #convert the BGRcoloured image to RGBcoloured
 plt.show() '''
 
+
 #Summarizer
 summarease = pipeline("summarization", model="facebook/bart-large-cnn")     #setting up summarizer model
-summary = summarease(fulltext, max_length=130, min_length=30, do_sample=False)  #properties adjustments
+
+#dynamic min and max length
+inputlength = len(fulltext.split())
+max_len = min(130, int(0.8 * inputlength))  # max 80% of input
+min_len = min(30, max_len - 1)               # min less than max
+
+summary = summarease(fulltext,  max_length=max_len, min_length=min_len, do_sample=False)  #properties adjustments
 print(summary[0]['summary_text'])
