@@ -2,8 +2,12 @@
   font-family: "AlteHaasGroteskBold";
   src: url("fonts/AlteHaasGroteskBold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "AlteHaasGroteskRegular";
+  src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+}
 
-body{
+.bgcustom{
     background-color: rgb(21, 35, 47);
 }
 
@@ -11,6 +15,11 @@ body{
     color: beige;
     font-family: "AlteHaasGroteskBold", sans-serif;
     text-align: center;
-    font-size: 78px;
+    font-size: 110px;
     margin: 0px;
+}
+.caption{
+    color: beige;
+    text-align: center;
+    margin-top: -18px;
 }
