@@ -2,7 +2,7 @@ import fitz
 from transformers import pipeline
 import textwrap 
 
-pdfpath=""
+pdfpath="testpdf.pdf"
 maxcharacter=1000
 
 document=fitz.open(pdfpath)
