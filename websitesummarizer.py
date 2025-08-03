@@ -1,11 +1,11 @@
-from newspaper import article
+from newspaper import Article
 from transformers import pipeline
 import textwrap
 
 websiteurl="https://en.wikipedia.org/wiki/Indochinese_green_magpie"
 maxcharacter=1000
 
-urltext=article(websiteurl)
+urltext=Article(websiteurl)
 urltext.download()
 urltext.parse()
 fulltext=urltext.text.strip()
