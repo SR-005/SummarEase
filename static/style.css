@@ -14,7 +14,6 @@
 .summarease {
     color: beige;
     font-family: "AlteHaasGroteskBold", sans-serif;
-    text-align: center;
     font-size: 110px;
     margin: 0px;
 }
@@ -23,3 +22,12 @@
     text-align: center;
     margin-top: -18px;
 }
+
+.uploadtext{
+    color: beige;
+    margin-left: 100px;
+}
+.forumdiv{
+    margin-top: 200px;
+}
+
