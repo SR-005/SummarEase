@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "AlteHaasGroteskBold";
+  src: url("fonts/AlteHaasGroteskBold.ttf") format("truetype");
+}
+
+body{
+    background-color: rgb(21, 35, 47);
+}
+
+.summarease {
+    color: beige;
+    font-family: "AlteHaasGroteskBold", sans-serif;
+    text-align: center;
+    font-size: 78px;
+    margin: 0px;
+}
