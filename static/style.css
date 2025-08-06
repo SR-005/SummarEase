@@ -39,8 +39,11 @@
 .selecttext{
     color: beige;
     font-size: 19px;
-    margin-top: 10px;
+    margin-top: 28px;
     margin-bottom: 0px;
-    margin-right: 10px;
+    margin-right: 0px;
+}
+.forum-label{
+    color: beige;
 }
 
