@@ -24,15 +24,23 @@
 }
 
 .uploadtext{
-    color: rgb(249, 115, 105);
+    color: rgb(219, 219, 145);
     font-family: "AlteHaasGroteskBold", sans-serif;
     text-decoration: underline;
     font-size: 20px;    
     margin-left: 0px;
     margin-bottom: 0px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 .forumdiv{
     margin: 0px;
+}
+
+.selecttext{
+    color: beige;
+    font-size: 19px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 10px;
 }
 
