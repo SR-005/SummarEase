@@ -24,20 +24,31 @@
 
     <div class="d-flex justify-content-center align-items-center mt-2">
     
-        <div id="documentInput" style="display: none;" class="w-25 ">
+        <div id="documentInput" style="display: none;" class="w-25">
             <p class="selecttext">Select a PDF from your System</p>
-            <input class="form-control" type="file" id="documentFile" name="documentFile" accept=".pdf">
+            <div class="d-flex flex-row align-items-center">
+                <input class="form-control" type="file" id="documentFile" name="documentFile" accept=".pdf">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
         </div>
 
         <div id="websiteInput" style="display: none;" class="w-25">
             <p class="selecttext">Enter a Website URL</p>
-            <input type="url" class="form-control" id="websiteURL" name="websiteURL" placeholder="https://example.com">
+            <div class="d-flex flex-row align-items-center">
+                <input type="url" class="form-control" id="websiteURL" name="websiteURL" placeholder="https://example.com">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
+
         </div>
 
         <div id="imageInput" style="display: none;" class="w-25">
             <p class="selecttext">Select an Image from your System</p>
-            <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*">
+            <div class="d-flex flex-row align-items-center">
+                <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
         </div>
+        
     </div>
 
     <script>
