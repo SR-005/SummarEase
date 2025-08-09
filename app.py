@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
+import os
 
 app=Flask(__name__)
+app.config["UPLOADFOLDER"]="uploads"
 
 @app.route("/",methods=["GET", "POST"])
 def index():
@@ -9,6 +11,9 @@ def index():
 
         if filetype=="document":
             docfile=request.files.get("documentFile") #extract the doc file from submitted forum
+            if docfile.filename.endswith(".pdf"):   #verify's that it is a pdf or not
+                filepath=os.path.join(app.config["UPLOADFOLDER"], docfile.filename)
+                docfile.save(filepath)
 
         elif filetype=="website":
             url=request.form.get("websiteURL")  #extract the url from submitted forum
