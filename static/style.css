@@ -7,46 +7,81 @@
   src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
 }
 
-.bgcustom{
+.bgcustom {
     background-color: rgb(21, 35, 47);
 }
 
 .summarease {
     color: beige;
     font-family: "AlteHaasGroteskBold", sans-serif;
-    font-size: 110px;
+    font-size: clamp(2.5rem, 6vw, 10rem); /* smaller min size */
+    line-height: 1.2;
+    word-break: break-word;
     margin: 0px;
-}
-.caption{
-    color: beige;
     text-align: center;
-    margin-top: -18px;
 }
 
-.uploadtext{
+.caption {
+    color: beige;
+    text-align: center;
+    margin-top: -10px;
+    font-size: clamp(1rem, 3vw, 2rem); /* responsive caption */
+}
+
+.uploadtext {
     color: rgb(219, 219, 145);
     font-family: "AlteHaasGroteskBold", sans-serif;
     text-decoration: underline;
-    font-size: 20px;    
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* responsive upload text */
     margin-left: 0px;
     margin-bottom: 0px;
     margin-top: 150px;
 }
-.forumdiv{
+
+.forumdiv {
     margin: 0px;
 }
 
-.selecttext{
+.selecttext {
     color: beige;
-    font-size: 19px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* responsive select text */
     margin-top: 28px;
     margin-bottom: 0px;
     margin-right: 0px;
 }
-.forum-label{
+
+.form-control{
+    max-width: 50px;
+}
+.forum-label {
     color: beige;
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* responsive form labels */
 }
 
-.btn-primary{
+.btn-primary {
     margin-left: 10px;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* responsive button text */
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+}
+
+.summary-box {
+    max-width: 800px; /* prevents full-width stretch */
+    max-height: 300px; /* scrolling when too long */
+    overflow-y: auto;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05); /* semi-transparent dark */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Make it more compact on mobile */
+@media (max-width: 768px) {
+    .summary-box {
+        max-width: 95%;
+        max-height: 200px;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
 }

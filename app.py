@@ -19,8 +19,8 @@ def index():
             if docfile.filename.endswith(".pdf"):   #verify's that it is a pdf or not
                 filepath=os.path.join(app.config["UPLOADFOLDER"], docfile.filename) #links the 'uploads' folder path with the file
                 docfile.save(filepath)  #save the file in that folder/path
-                summaary=pdfsummarizer(filepath)
-                print(summaary)
+                summary=pdfsummarizer(filepath)
+                print(summary)
 
         elif filetype=="website":
             url=request.form.get("websiteURL")  #extract the url from submitted forum
@@ -31,12 +31,16 @@ def index():
         elif filetype=="image":
             imgfile=request.files.get("imageFile")  #extract the image file from submitted forum
             if imgfile:
-                filepath = os.path.join(app.config['UPLOAD_FOLDER'], imgfile.filename)
+                filepath = os.path.join(app.config['UPLOADFOLDER'], imgfile.filename)
                 imgfile.save(filepath)
                 summary=imagesummarizer(filepath)
                 print(summary)
 
-    return render_template("index.html")
+    return render_template("index.html",summary=summary)
+
+
+'''if __name__=="__main__":
+    app.run(debug=True)'''
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
