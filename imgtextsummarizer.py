@@ -33,7 +33,7 @@ def main(imagepath):
 
 
     #Summarizer
-    summarease = pipeline("summarization", model="facebook/bart-large-cnn")     #setting up summarizer model
+    summarease = pipeline("summarization", model="facebook/bart-large-cnn",device=1)     #setting up summarizer model
 
     #dynamic min and max length
     inputlength = len(fulltext.split())

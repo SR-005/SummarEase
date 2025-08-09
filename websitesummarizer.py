@@ -15,7 +15,7 @@ def main(websiteurl):
         summary="No Text could be extracted"
     else:
         formattedtext=textwrap.wrap(fulltext,maxcharacter)
-        summarease = pipeline("summarization", model="facebook/bart-large-cnn")
+        summarease = pipeline("summarization", model="facebook/bart-large-cnn",device=1)
 
         appendsummary=[]
         for i in formattedtext:
