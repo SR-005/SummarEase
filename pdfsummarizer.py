@@ -1,6 +1,7 @@
 import fitz
 from transformers import pipeline
-import textwrap 
+import textwrap
+from preloadmodels import summarizer as summarease
 
 def main(pdfpath):
     pdfpath=pdfpath
@@ -16,7 +17,7 @@ def main(pdfpath):
     formattedtext=textwrap.wrap(text,maxcharacter)
 
     #Summarizer
-    summarease = pipeline("summarization", model="facebook/bart-large-cnn",device=1)     #setting up summarizer model
+    '''summarease = pipeline("summarization", model="facebook/bart-large-cnn",device=1)     #setting up summarizer model'''
 
     appendsummary=[]
     for i in formattedtext:
