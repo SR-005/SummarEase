@@ -2,25 +2,26 @@ import fitz
 from transformers import pipeline
 import textwrap 
 
-pdfpath="testpdf.pdf"
-maxcharacter=1000
+def main(pdfpath):
+    pdfpath=pdfpath
+    maxcharacter=1000
 
-document=fitz.open(pdfpath)
-text=""
-for page in document:
-    text=text+page.get_text()
-document.close()
+    document=fitz.open(pdfpath)
+    text=""
+    for page in document:
+        text=text+page.get_text()
+    document.close()
 
-#spliting words according to max limit
-formattedtext=textwrap.wrap(text,maxcharacter)
+    #spliting words according to max limit
+    formattedtext=textwrap.wrap(text,maxcharacter)
 
-#Summarizer
-summarease = pipeline("summarization", model="facebook/bart-large-cnn")     #setting up summarizer model
+    #Summarizer
+    summarease = pipeline("summarization", model="facebook/bart-large-cnn")     #setting up summarizer model
 
-appendsummary=[]
-for i in formattedtext:
-    summary = summarease(i,  max_length=130, min_length=30, do_sample=False)[0]['summary_text']  #properties adjustments
-    appendsummary.append(summary)
+    appendsummary=[]
+    for i in formattedtext:
+        summary = summarease(i,  max_length=130, min_length=30, do_sample=False)[0]['summary_text']  #properties adjustments
+        appendsummary.append(summary)
 
-fullsummary="\n\n".join(appendsummary)
-print(fullsummary)
+    fullsummary="\n\n".join(appendsummary)
+    return fullsummary
