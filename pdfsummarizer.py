@@ -1,7 +1,7 @@
 import fitz
 from transformers import pipeline
 import textwrap
-from preloadmodels import summarizer as summarease
+from preloadmodels import summarizer as summarease 
 
 def main(pdfpath):
     pdfpath=pdfpath
@@ -26,3 +26,5 @@ def main(pdfpath):
 
     fullsummary="\n\n".join(appendsummary)
     return fullsummary
+    '''print(fullsummary)'''
+'''main("testpdf.pdf")'''
