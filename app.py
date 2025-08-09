@@ -12,8 +12,8 @@ def index():
         if filetype=="document":
             docfile=request.files.get("documentFile") #extract the doc file from submitted forum
             if docfile.filename.endswith(".pdf"):   #verify's that it is a pdf or not
-                filepath=os.path.join(app.config["UPLOADFOLDER"], docfile.filename)
-                docfile.save(filepath)
+                filepath=os.path.join(app.config["UPLOADFOLDER"], docfile.filename) #links the 'uploads' folder path with the file
+                docfile.save(filepath)  #save the file in that folder/path
 
         elif filetype=="website":
             url=request.form.get("websiteURL")  #extract the url from submitted forum
