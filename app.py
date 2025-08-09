@@ -11,8 +11,8 @@ os.makedirs(app.config['UPLOADFOLDER'], exist_ok=True)#checks if the uploads fol
 @app.route("/",methods=["GET", "POST"])
 def index():
     summary=None
-    if request.method == ['POST']:
-        filetype=request.form("inputTypeSelector")
+    if request.method == "POST":
+        filetype = request.form.get("inputTypeSelector")
 
         if filetype=="document":
             docfile=request.files.get("documentFile") #extract the doc file from submitted forum
@@ -24,6 +24,7 @@ def index():
 
         elif filetype=="website":
             url=request.form.get("websiteURL")  #extract the url from submitted forum
+            print("gotit")
             summary=websitesummarizer(url)
             print(summary)
             
