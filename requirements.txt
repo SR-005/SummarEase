@@ -1,0 +1,11 @@
+flask
+transformers
+torch
+opencv-python
+easyocr
+matplotlib
+PyMuPDF
+newspaper3k
+beautifulsoup4
+requests
+gunicorn
