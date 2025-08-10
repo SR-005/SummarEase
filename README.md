@@ -53,15 +53,15 @@ This may take some time depending on your internet connection.
 *(Add your screenshots here to show SummarEase in action!)*  
 
 Example:  
-![Homepage Screenshot](<img width="1851" height="980" alt="Screenshot 2025-08-10 153320" src="https://github.com/user-attachments/assets/df09eca4-3bcc-44e7-975c-a080be2b9ea8" />
-)  
-![Summarization Example](<img width="1517" height="932" alt="Screenshot 2025-08-10 153534" src="https://github.com/user-attachments/assets/a0229f38-3b3e-403a-a489-6d071b932423" />
-)  
+<img width="1851" height="980" alt="Screenshot 2025-08-10 153320" src="https://github.com/user-attachments/assets/46c5155a-9ac0-4dfd-b0be-1bb7effe1c6f" />
+
+<img width="1517" height="932" alt="Screenshot 2025-08-10 153534" src="https://github.com/user-attachments/assets/901394ee-bd32-4d3c-90fd-3a6165588488" />
+
 
 
 ---
 ## 📸 Video  
-![Working](https://drive.google.com/file/d/1KkX9YhS08QXKx3BgZpYuucXtw_hB_-dL/view?usp=sharing)
+https://drive.google.com/file/d/1KkX9YhS08QXKx3BgZpYuucXtw_hB_-dL/view?usp=sharing
 ---
 
 ## 🗂 Project Structure
